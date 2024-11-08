@@ -3,13 +3,13 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/node:lts  # Use the official Node.js LTS image
+      - image: cimg/node:lts
     steps:
       - checkout
       - run:
           name: Install dependencies and build project
           command: |
-            cd frontend  # Navigate to the correct directory
+            cd Backend
             npm install
             npm run build
       - sonarcloud/scan
