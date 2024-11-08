@@ -12,6 +12,11 @@ jobs:
             cd Backend
             npm install
             npm run build
+      - run:
+          name: Run tests and linting
+          command: |
+            npm run lint
+            npm run test
       - sonarcloud/scan
 
 orbs:
